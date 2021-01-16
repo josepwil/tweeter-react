@@ -1,21 +1,23 @@
 import React from 'react'
 
-export const Tweet = () => {
+export const Tweet = (props) => {
+  const {name, handle, text, profile_image, date} = props;
+
   return(
-    <article class="tweet"><header class="tweet--header">
-      <img class="tweet--avatar" src="https://i.imgur.com/9pNffkj.png" />
-      <h2 class="tweet--name">Adam Smith</h2>
-      <small class="tweet--handle">@ASmith</small>
+    <article className="tweet"><header className="tweet--header">
+      <img className="tweet--avatar" src={ profile_image } />
+      <h2 className="tweet--name">{ name }</h2>
+      <small className="tweet--handle">{ handle }</small>
     </header>
-      <div class="tweet--body">
-        <p>What is your favourite thing about tweeter?</p>
+      <div className="tweet--body">
+        <p>{ text }</p>
       </div>
-    <footer class="tweet--footer"> 
-      <small class="footer--age">10 days ago</small>
-      <span class="footer--actions">
-        <a href="#"><i class="fa fa-flag"></i></a>
-        <a href="#"><i class="fa fa-retweet"></i></a>
-        <a href="#"><i class="fa fa-heart"></i></a>
+    <footer className="tweet--footer"> 
+      <small className="footer--age"> { date }</small>
+      <span className="footer--actions">
+        <a href="#"><i className="fa fa-flag"></i></a>
+        <a href="#"><i className="fa fa-retweet"></i></a>
+        <a href="#"><i className="fa fa-heart"></i></a>
       </span>
     </footer>
     </article>

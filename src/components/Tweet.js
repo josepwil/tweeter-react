@@ -4,11 +4,15 @@ export const Tweet = (props) => {
   const {name, handle, text, profile_image, date} = props;
 
   return(
-    <article className="tweet"><header className="tweet--header">
-      <img className="tweet--avatar" src={ profile_image } />
-      <h2 className="tweet--name">{ name }</h2>
-      <small className="tweet--handle">{ handle }</small>
-    </header>
+    <>
+      {name && handle && text && profile_image && date &&
+      (
+    <article className="tweet">
+      <header className="tweet--header">
+        <img className="tweet--avatar" src={ profile_image } />
+        <h2 className="tweet--name">{ name }</h2>
+        <small className="tweet--handle">{ handle }</small>
+      </header>
       <div className="tweet--body">
         <p>{ text }</p>
       </div>
@@ -21,5 +25,8 @@ export const Tweet = (props) => {
       </span>
     </footer>
     </article>
+    )
+  }
+    </>
   )
 }
